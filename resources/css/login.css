@@ -1,0 +1,36 @@
+:root{
+  --y:#FFD700;--yl:#FFF8C0;--b:#1B6CA8;--bd:#0D3D6B;
+  --o:#FF6B2B;--r:#E8352B;--cr:#FFFDF0;--blk:#1A1A1A;
+  --g:#F4F3EE;--sh:4px 4px 0 #1A1A1A;--shl:6px 6px 0 #1A1A1A;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;font-family:'Nunito',sans-serif;color:var(--blk);background:var(--cr);overflow:hidden;}
+
+/* ===== SCREENS ===== */
+.screen{position:fixed;inset:0;display:none;flex-direction:column;background:var(--cr);}
+.screen.active{display:flex;}
+
+/* ===== LOGIN SCREEN ===== */
+#loginScreen{background:var(--bd);align-items:center;justify-content:center;}
+.login-bg{position:absolute;inset:0;overflow:hidden;}
+.login-bg .emoji{position:absolute;font-size:2rem;animation:floatRnd 8s ease-in-out infinite;opacity:0.08;}
+.login-box{background:var(--cr);border:4px solid var(--blk);border-radius:28px;box-shadow:var(--shl);padding:2.5rem 2rem;width:90%;max-width:400px;position:relative;z-index:1;text-align:center;}
+.login-logo{width:110px;height:110px;border-radius:50%;border:4px solid var(--blk);box-shadow:var(--shl);object-fit:cover;margin-left:auto;margin-right:auto;margin-bottom:1rem;animation:pop 0.6s cubic-bezier(.34,1.56,.64,1) both, float 3s ease-in-out infinite;}
+.login-title{font-family:'Boogaloo',cursive;font-size:2.2rem;color:var(--bd);line-height:1;}
+.login-sub{font-size:0.82rem;color:#888;margin-bottom:2rem;letter-spacing:1px;text-transform:uppercase;}
+.login-field{width:100%;background:#fff;border:2.5px solid rgba(0,0,0,0.15);border-radius:12px;padding:0.85rem 1rem;font-family:'Nunito',sans-serif;font-size:0.95rem;outline:none;margin-bottom:0.85rem;transition:border-color 0.15s;}
+.login-field:focus{border-color:var(--b);}
+.login-btn{width:100%;font-family:'Fredoka One',cursive;font-size:1.15rem;background:var(--bd);color:var(--y);border:3px solid var(--blk);border-radius:14px;padding:0.9rem;cursor:pointer;box-shadow:var(--sh);transition:transform 0.15s,box-shadow 0.15s;margin-bottom:0.75rem;}
+.login-btn:hover{transform:translate(-2px,-2px);box-shadow:var(--shl);}
+.login-guest{font-family:'Fredoka One',cursive;font-size:0.9rem;color:#aaa;background:transparent;border:2px solid rgba(0,0,0,0.1);border-radius:10px;padding:0.65rem;width:100%;cursor:pointer;transition:all 0.15s;}
+.login-guest:hover{background:var(--y);color:var(--blk);border-color:var(--blk);}
+.login-err{font-size:0.8rem;color:var(--r);margin-top:-0.5rem;margin-bottom:0.6rem;font-weight:700;display:none;}
+.demo-hint{font-size:0.72rem;color:#bbb;margin-top:1rem;}
+.demo-hint strong{color:var(--b);}
+
+
+@keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
