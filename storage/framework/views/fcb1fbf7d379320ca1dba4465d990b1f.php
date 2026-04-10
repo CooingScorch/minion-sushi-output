@@ -215,6 +215,12 @@ body{background:var(--bg);display:flex;flex-direction:column;min-height:100vh;ov
     <a href="<?php echo e(route('admin.order.items')); ?>" class="sb-item">
       <span class="sb-ic">📋</span> Order Items
     </a>
+    <a href="<?php echo e(route('admin.feedback.index')); ?>" class="sb-item">
+      <span class="sb-ic">🖊️</span> Feedback
+    </a>
+    <a href="<?php echo e(route('admin.contact.index')); ?>" class="sb-item">
+      <span class="sb-ic">📞</span> Contact Message
+    </a>
     <div class="sb-bottom">
       <div class="sb-div"></div>
       <a href="<?php echo e(route('logout')); ?>" class="sb-logout"><span class="sb-ic">↩</span> Log Out</a>

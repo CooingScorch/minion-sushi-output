@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\ContactMessage;
 
-class ContactController extends Controller
+class AdminContactController extends Controller
 {
     public function index()
     {

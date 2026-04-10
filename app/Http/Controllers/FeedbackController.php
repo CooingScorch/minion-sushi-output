@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Feedback;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class FeedbackController extends Controller
 {
@@ -24,7 +25,7 @@ class FeedbackController extends Controller
             'comment' => 'nullable|string|max:1000',
         ]);
 
-        Feedback::create([
+        DB::table('feedback')->insert([
             'user_id' => Auth::id(),
             'overall_rating' => $validated['overall_rating'],
             'food_taste' => $validated['food_taste'],

@@ -414,7 +414,6 @@
         </div>
     </div>
 
-    
     <form action="<?php echo e(route('feedback.store')); ?>" method="POST" class="feedback-form">
         <?php echo csrf_field(); ?>
 

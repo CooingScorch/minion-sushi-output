@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('order_log', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
             $table->decimal('bill_amount', 8, 2);
             $table->integer('table_number');
             $table->timestamps(); 

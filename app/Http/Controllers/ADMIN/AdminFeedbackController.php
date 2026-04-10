@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\ADMIN;
 
 use App\Http\Controllers\Controller;
 use App\Models\Feedback;
 
-class FeedbackController extends Controller
+class AdminFeedbackController extends Controller
 {
     public function index()
     {

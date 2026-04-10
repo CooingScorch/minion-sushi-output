@@ -1,7 +1,7 @@
-@extends('layouts.admin')
-@section('title', 'Contact Messages')
 
-@section('content')
+<?php $__env->startSection('title', 'Contact Messages'); ?>
+
+<?php $__env->startSection('content'); ?>
 <div style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem;">
 
     <div style="
@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    @if(session('success'))
+    <?php if(session('success')): ?>
         <div style="
             background:#dff7df;
             border:3px solid var(--blk);
@@ -29,12 +29,13 @@
             font-weight:900;
             color:#1d5c2f;
         ">
-            {{ session('success') }}
-        </div>
-    @endif
+            <?php echo e(session('success')); ?>
 
-    @if($messages->count())
-        @foreach($messages as $msg)
+        </div>
+    <?php endif; ?>
+
+    <?php if($messages->count()): ?>
+        <?php $__currentLoopData = $messages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $msg): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div style="
                 background:#fff;
                 border:3px solid var(--blk);
@@ -51,19 +52,22 @@
                 <div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:flex-start;">
                     <div>
                         <div style="font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--bd);">
-                            {{ $msg->name }}
+                            <?php echo e($msg->name); ?>
+
                         </div>
                         <div style="font-size:0.92rem;font-weight:800;color:#666;">
-                            {{ $msg->email }}
+                            <?php echo e($msg->email); ?>
+
                         </div>
                         <div style="font-size:0.9rem;font-weight:800;color:#666;margin-top:0.15rem;">
-                            {{ $msg->phone }}
+                            <?php echo e($msg->phone); ?>
+
                         </div>
                     </div>
 
-                    <form action="{{ route('admin.contact.destroy', $msg->id) }}" method="POST" onsubmit="return confirm('Delete this message?')">
-                        @csrf
-                        @method('DELETE')
+                    <form action="<?php echo e(route('admin.contact.destroy', $msg->id)); ?>" method="POST" onsubmit="return confirm('Delete this message?')">
+                        <?php echo csrf_field(); ?>
+                        <?php echo method_field('DELETE'); ?>
                         <button type="submit" style="
                             background:#ffe0e0;
                             color:#8b1e1e;
@@ -92,12 +96,13 @@
                         Customer Message
                     </div>
                     <div style="font-weight:800;color:#444;line-height:1.55;">
-                        {{ $msg->message }}
+                        <?php echo e($msg->message); ?>
+
                     </div>
                 </div>
             </div>
-        @endforeach
-    @else
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    <?php else: ?>
         <div style="
             background:#fff;
             border:3px solid var(--blk);
@@ -109,7 +114,8 @@
         ">
             No contact messages found yet.
         </div>
-    @endif
+    <?php endif; ?>
 
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.admin', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\minion-sushi-output\resources\views/admin/contact/index.blade.php ENDPATH**/ ?>

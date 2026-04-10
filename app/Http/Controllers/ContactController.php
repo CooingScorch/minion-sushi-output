@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ContactMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ContactController extends Controller
 {
@@ -17,7 +18,7 @@ class ContactController extends Controller
             'message' => 'required|string|max:2000',
         ]);
 
-        ContactMessage::create([
+        DB::table('contact_messages')->insert([
             'user_id' => Auth::check() ? Auth::id() : null,
             'name' => $validated['name'],
             'phone' => $validated['phone'],
