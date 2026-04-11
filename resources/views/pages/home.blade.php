@@ -750,7 +750,7 @@
 </div>
 
 {{-- TABLE SELECTION MODAL --}}
-{{-- 放在 home.blade.php 的 @section('modals') 里，替换原来的 tableOverlay --}}
+
 
 <div class="overlay" id="tableOverlay" style="z-index:610;pointer-events:none;">
   <div class="tbl-modal">

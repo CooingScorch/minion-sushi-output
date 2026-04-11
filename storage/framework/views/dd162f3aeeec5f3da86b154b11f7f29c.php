@@ -2,7 +2,7 @@
 <?php $__env->startSection('title', 'Menu List'); ?>
 <?php $__env->startSection('content'); ?>
 <div style="padding:1.5rem;">
-  <h2 style="font-family:'Fredoka One',cursive;font-size:1.8rem;margin-bottom:1rem;">📋 Order Log</h2>
+  <h2 style="font-family:'Fredoka One',cursive;font-size:1.8rem;margin-bottom:1rem;">📋 Order Items</h2>
   
 
 <a href="<?php echo e(route('AdminDashboard')); ?>" style="display:inline-block;margin-bottom:1rem;background:#1a3a5c;color:white;padding:0.5rem 1.2rem;border-radius:8px;text-decoration:none;font-weight:600;">← Back to Dashboard</a>
